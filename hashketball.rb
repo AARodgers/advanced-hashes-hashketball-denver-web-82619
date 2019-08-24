@@ -166,24 +166,22 @@ def player_numbers(team_name)
   nums
 end
 
-def player_stats(sought_player_name)
+def player_stats(players_name)
   new_hash = {}
   
-  game_hash.collect do |place, team|
-    team.each do |attribute, _data|
-      next unless attribute == :players
-
-      game_hash[place][attribute].each do |player|
-        next unless player[:player_name] == sought_player_name
-
-        new_hash = player.delete_if do |k, _v|
-          k == :player_name
-        end
+  game_hash.each do |place team|
+    team.each do |attributes, data|
+      if attributes == :players
+        data.each do |player|
+      end
       end
     end
   end
-  new_hash
+      
+          
 end
+  
+
 
 def big_shoe_rebounds
   biggest_shoe = 0
