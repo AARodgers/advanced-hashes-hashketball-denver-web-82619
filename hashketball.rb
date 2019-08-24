@@ -167,7 +167,7 @@ def player_numbers(team_name)
 end
 
 def player_stats(sought_player_name)
-  new_hash = {},
+  new_hash = {}
   
   game_hash.collect do |place, team|
     team.each do |attribute, _data|
